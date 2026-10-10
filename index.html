@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="منيو دكتور بيتزا - بيتزا بطعم جديد وتجربة مختلفة" />
+  <title>Dr. Pizza | دكتور بيتزا — المنيو</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Tajawal:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-testid="app-root">
+
+  <!-- ===== القائمة العلوية ===== -->
+  <header class="navbar" id="navbar" data-testid="main-navbar">
+    <div class="nav-inner">
+      <a href="#home" class="brand" data-testid="nav-brand-button">Dr.<span>Pizza</span></a>
+      <nav class="nav-links" id="nav-links" data-testid="nav-links"></nav>
+      <div class="nav-actions">
+        <a id="nav-whatsapp" class="btn btn-red btn-sm nav-wa" target="_blank" rel="noopener" data-testid="nav-whatsapp-button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          اطلب الآن
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="القائمة" data-testid="nav-mobile-toggle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" data-testid="nav-mobile-menu"></nav>
+  </header>
+
+  <!-- ===== الواجهة الرئيسية ===== -->
+  <section class="hero" id="home" data-testid="hero-section">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="mask"><span class="mask-line hero-kicker">DR. PIZZA — EST. MENU</span></span>
+      <h1 class="hero-title">
+        <span class="mask"><span class="mask-line" style="animation-delay:.5s">بيتزا بطعم جديد</span></span>
+        <span class="mask"><span class="mask-line" style="animation-delay:.65s">وتجربة <em>مختلفة</em></span></span>
+      </h1>
+      <span class="mask"><span class="mask-line hero-sub" style="animation-delay:.85s">عجينة طازجة كل يوم، صلصتنا الخاصة، وأجود أنواع الجبنة — من الفرن إلى بيتك.</span></span>
+      <div class="hero-cta">
+        <a href="#cat-0" class="btn btn-red" data-testid="hero-browse-menu-button">تصفّح المنيو</a>
+        <a id="hero-whatsapp" class="btn btn-outline" target="_blank" rel="noopener" data-testid="hero-whatsapp-button">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          اطلب عبر واتساب
+        </a>
+      </div>
+    </div>
+    <a href="#cat-0" class="hero-scroll" aria-label="انزل للمنيو" data-testid="hero-scroll-indicator">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </section>
+
+  
+
+  <!-- ===== أقسام المنيو (تُبنى بالجافا سكربت) ===== -->
+  <main id="menu-container" data-testid="menu-main"></main>
+
+  <!-- ===== قسم صاحب المطعم ===== -->
+  <section class="owner-section" data-testid="owner-section">
+  <div class="modal-head">
+  <h3>تسجيل دخول المالك</h3>
+  <button type="button" class="modal-close"
+          data-close aria-label="إغلاق">&times;</button>
+</div>
+
+<p class="modal-hint">هذه المنطقة مخصصة لصاحب المطعم فقط</p>
+
+<label class="field-label">البريد الإلكتروني</label>
+<input
+  type="email"
+  id="owner-email"
+  autocomplete="username"
+  placeholder="البريد الإلكتروني"
+  required
+/>
+
+<label class="field-label">كلمة المرور</label>
+<input
+  type="password"
+  id="pin-input"
+  autocomplete="current-password"
+  placeholder="كلمة المرور"
+  required
+/>
+
+<p class="field-error hidden" id="pin-error">
+  البريد الإلكتروني أو كلمة المرور غير صحيحة
+</p>
+
+<button type="submit" class="btn btn-red btn-block">
+  دخول
+</button>
+  </section>
+
+  <!-- ===== تذييل: الموقع والهاتف ===== -->
+  <footer class="footer" id="contact" data-testid="footer-section">
+    <div class="footer-inner">
+      <h2 class="footer-title reveal">جعّان؟ <em>اطلب الآن</em></h2>
+      <div class="footer-grid">
+        <div class="footer-info reveal">
+          <div class="info-row" data-testid="footer-location">
+            <span class="info-icon red">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <h4>الموقع</h4>
+              <p id="location-text"></p>
+            </div>
+          </div>
+          <div class="info-row" data-testid="footer-delivery-note">
+            <span class="info-icon gold">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <div>
+              <h4>خدمة التوصيل</h4>
+              <p>خدمة التوصيل متوفرة لجميع المناطق المجاورة</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-phone reveal">
+          <h4>الهاتف</h4>
+          <a id="footer-whatsapp" class="btn btn-red btn-lg" target="_blank" rel="noopener" data-testid="footer-whatsapp-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span id="phone-display" dir="ltr" class="phone-number"></span>
+          </a>
+          <p class="phone-note">اضغط على الرقم للتواصل معنا مباشرة عبر واتساب</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="brand">Dr.<span>Pizza</span></span>
+        <p>بيتزا بطعم جديد وتجربة مختلفة — جميع الحقوق محفوظة</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== نافذة رمز المالك ===== -->
+  <div class="modal-backdrop hidden" id="pin-modal" data-testid="pin-modal">
+    <form class="modal modal-sm" id="pin-form" data-testid="pin-form">
+      <input type="email" id="owner-email" autocomplete="username" placeholder="البريد الإلكتروني" required/>
+      <div class="modal-head">
+        <h3>رمز المالك</h3>
+        <button type="button" class="modal-close" data-close aria-label="إغلاق" data-testid="pin-close-button">&times;</button>
+      </div>
+      <p class="modal-hint">هذه المنطقة مخصصة لصاحب المطعم فقط</p>
+      <label class="field-label">الرمز السري</label>
+      <input type="password" id="pin-input" inputmode="numeric" autocomplete="off" placeholder="••••" data-testid="pin-input" />
+      <p class="field-error hidden" id="pin-error" data-testid="pin-error">الرمز غير صحيح، حاول مرة أخرى</p>
+      <button type="submit" class="btn btn-red btn-block" data-testid="pin-submit-button">دخول</button>
+    </form>
+  </div>
+
+  <!-- ===== نافذة إضافة صنف ===== -->
+  <div class="modal-backdrop hidden" id="add-modal" data-testid="add-item-modal">
+    <form class="modal" id="add-form" data-testid="add-item-form">
+      <div class="modal-head">
+        <h3>إضافة صنف جديد</h3>
+        <p id="owner-hint"> صاحب المطعم؟ أضف صنفاً جديداً للمنيو مباشرة</p>
+        <button type="button" class="modal-close" data-close aria-label="إغلاق" data-testid="add-item-close-button">&times;</button>
+      </div>
+      <button id="open-add-item" type="button">+ إضافة صنف جديد</button>
+      <label class="field-label">اسم الصنف</label>
+      <input type="text" id="item-name" placeholder="مثال: بيتزا مشكل جبن" data-testid="add-item-name-input" />
+
+      <label class="field-label">الفئة</label>
+      <select id="item-category" data-testid="add-item-category-select"></select>
+      <input type="text" id="item-new-category" class="hidden" placeholder="اسم الفئة الجديدة" data-testid="add-item-new-category-input" />
+
+      <label class="field-label">الوصف (اختياري)</label>
+      <input type="text" id="item-desc" placeholder="مكونات الصنف أو وصف قصير" data-testid="add-item-desc-input" />
+
+      <label class="field-label">رابط صورة الصنف (اختياري)</label>
+      <input type="url" id="item-image" placeholder="https://..." dir="ltr" data-testid="add-item-image-input" />
+
+      <label class="field-label">الأحجام والأسعار</label>
+      <div id="price-rows"></div>
+      <button type="button" class="add-size-btn" id="add-size-row" data-testid="add-item-add-size-button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        إضافة حجم آخر
+      </button>
+
+      <button type="submit" class="btn btn-red btn-block" data-testid="add-item-submit-button">حفظ الصنف</button>
+    </form>
+  </div>
+
+  <div class="toast hidden" id="toast" data-testid="toast"></div>
+  <button id="owner-lock" class="hidden" type="button">
+    تسجيل الخروج
+</button>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
